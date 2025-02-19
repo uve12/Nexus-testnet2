@@ -72,6 +72,7 @@ PROTOC_VERSION=25.3  # Check latest at: https://github.com/protocolbuffers/proto
 curl -LO https://github.com/protocolbuffers/protobuf/releases/download/v$PROTOC_VERSION/protoc-$PROTOC_VERSION-linux-x86_64.zip
 unzip protoc-$PROTOC_VERSION-linux-x86_64.zip -d $HOME/.local
 export PATH="$HOME/.local/bin:$PATH"
+
 ```
 ### Install Rust
 ```
