@@ -19,7 +19,7 @@ Subscribe : [Crypto Console Youtube](https://www.youtube.com/@cryptoconsole)
 | **Hardware** | **Minimum Requirement** |
 |--------------|-------------------------|
 | **CPU**      | 4 Cores                 |
-| **RAM**      | 4 GB                    | 
+| **RAM**      | 6 GB                    | 
 | **Disk**     | 50  GB  SSD             |
 
 
@@ -65,6 +65,27 @@ Visit the Nexus App: https://app.nexus.xyz and create an account. A wallet will 
 ### Install dependencies
 ```
 sudo apt update && sudo apt upgrade
-sudo apt install build-essential pkg-config libssl-dev git-all
+sudo apt install build-essential pkg-config libssl-dev git-all curl screen unzip protobuf-compiler
 ```
 
+### Install Rust
+```
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+```
+source $HOME/.cargo/env
+```
+```
+rustup target add riscv32i-unknown-none-elf
+```
+
+### Open Screen and Start Node
+```
+screen -S nexus
+```
+```
+curl https://cli.nexus.xyz/ | sh
+```
+---
+
+**Follow** : https://x.com/cryptoconsol
