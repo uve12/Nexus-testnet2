@@ -1,5 +1,5 @@
 # Nexus-testnet2
-Full guide to Nexus testnet2 and app deployment.
+Full guide to Nexus testnet2 Cli node.
 
 Unlock the Power of Verifiable Computation
 
