@@ -67,7 +67,12 @@ Visit the Nexus App: https://app.nexus.xyz and create an account. A wallet will 
 sudo apt update && sudo apt upgrade
 sudo apt install build-essential pkg-config libssl-dev git-all curl screen unzip protobuf-compiler
 ```
-
+```
+PROTOC_VERSION=25.3  # Check latest at: https://github.com/protocolbuffers/protobuf/releases
+curl -LO https://github.com/protocolbuffers/protobuf/releases/download/v$PROTOC_VERSION/protoc-$PROTOC_VERSION-linux-x86_64.zip
+unzip protoc-$PROTOC_VERSION-linux-x86_64.zip -d $HOME/.local
+export PATH="$HOME/.local/bin:$PATH"
+```
 ### Install Rust
 ```
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
