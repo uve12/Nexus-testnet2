@@ -65,7 +65,7 @@ Visit the Nexus App: https://app.nexus.xyz and create an account. A wallet will 
 ### Install dependencies
 ```
 sudo apt update && sudo apt upgrade
-sudo apt install build-essential pkg-config libssl-dev git-all curl screen unzip protobuf-compiler
+sudo apt install build-essential pkg-config libssl-dev git-all curl screen unzip
 ```
 
 ### Install Protobuf
