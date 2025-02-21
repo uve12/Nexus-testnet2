@@ -67,13 +67,41 @@ Visit the Nexus App: https://app.nexus.xyz and create an account. A wallet will 
 sudo apt update && sudo apt upgrade
 sudo apt install build-essential pkg-config libssl-dev git-all curl screen unzip protobuf-compiler
 ```
-```
-PROTOC_VERSION=25.3  # Check latest at: https://github.com/protocolbuffers/protobuf/releases
-curl -LO https://github.com/protocolbuffers/protobuf/releases/download/v$PROTOC_VERSION/protoc-$PROTOC_VERSION-linux-x86_64.zip
-unzip protoc-$PROTOC_VERSION-linux-x86_64.zip -d $HOME/.local
-export PATH="$HOME/.local/bin:$PATH"
+
+### Install Protobuf
+
+The protobuf Installation steps might be different from shown in the video. No issues, Just copy and paste step by step.
 
 ```
+sudo apt remove --purge -y protobuf-compiler
+rm -rf $HOME/.local/bin/protoc
+rm -rf $HOME/.local/include/google
+```
+```
+PROTOC_VERSION=25.3
+wget https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOC_VERSION}/protoc-${PROTOC_VERSION}-linux-x86_64.zip -O protoc.zip
+
+```
+```
+unzip -o protoc.zip -d $HOME/.local
+rm protoc.zip  # Cleanup the downloaded file
+
+```
+```
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+echo 'export PROTOC="$HOME/.local/bin/protoc"' >> ~/.bashrc
+source ~/.bashrc
+
+```
+
+```
+protoc --version
+```
+
+
+Result should be **libprotoc 25.3**
+
+
 ### Install Rust
 ```
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
